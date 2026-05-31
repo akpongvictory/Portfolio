@@ -6,7 +6,7 @@
 
 body{
     /* font-family: sans-serif; */
-    background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(image.jpg);
+    background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(pictures/image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -191,7 +191,8 @@ header{
 
 /* STAT CARD */
 .stat{
-    background: gray;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
     padding:30px;
     border-radius:10px;
 }
@@ -382,3 +383,39 @@ footer{
     transform: translateY(-5px);
 }
 
+.skills{
+    padding:80px 5%;
+}
+
+.skills-container{
+    max-width:1000px;
+    margin:auto;
+
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.skill-card{
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    padding:15px 25px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    transition:0.3s ease;
+
+    font-weight:600;
+}
+
+.skill-card:hover{
+    background:#15803d;
+
+    transform:translateY(-5px);
+}
