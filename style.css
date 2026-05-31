@@ -24,12 +24,17 @@ html{
     scroll-behavior:smooth;
 }
 
+:root{
+    --primary:#22c55e;
+}
+
+
 header{
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    padding:20px 5%;
+    padding:5px 5px;
     background: rgba(182, 127, 127, 0);
     backdrop-filter: blur(10px);
    
@@ -37,6 +42,31 @@ header{
     top:0;
     z-index:1000;
 
+}
+
+/* .logo{
+    font-size:1.8rem;
+    font-weight:700;
+    color:#22c55e;
+    letter-spacing:1px;
+    cursor:pointer;
+
+    transition:0.3s ease;
+}
+
+.logo:hover{
+    color:white;
+} */
+
+.logo img{
+    height:100px;
+    width:auto;
+
+    transition:0.3s ease;
+}
+
+.logo img:hover{
+    transform:scale(1.05);
 }
 
 nav{
