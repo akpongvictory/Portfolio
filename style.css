@@ -183,7 +183,7 @@ button:hover{
 }
 
 .hero-image img{
-    width:100%;
+    width:80%;
     padding: 50px 50px;
     border-radius:200px;
 }
@@ -392,9 +392,10 @@ nav button{
 
 footer{
     text-align: center;
-    padding: 40px 20px;
-    background: #111;
-    color: #ffffff;
+    padding: 30px 10px;
+     background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+   color: hsl(0, 0%, 100%);
 }
 
 .social-icons{
