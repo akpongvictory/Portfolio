@@ -1,0 +1,66 @@
+/* src/index.css */
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────── */
+:root {
+  --color-brand: #22c55e;
+  --color-brand-dark: #15803d;
+}
+
+/* ─── Global Base ────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('/pictures/image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+/* ─── Navbar Responsive ──────────────────────── */
+@media (max-width: 768px) {
+  .desktop-links { display: none !important; }
+  .desktop-only-btn { display: none !important; }
+  .hamburger { display: block !important; }
+}
+
+/* ─── Hero Responsive ────────────────────────── */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column !important;
+    text-align: center;
+    padding-top: 40px !important;
+    min-height: auto !important;
+  }
+  .hero-section img {
+    width: 60% !important;
+    padding: 0 !important;
+  }
+}
+
+/* ─── About Responsive ───────────────────────── */
+@media (max-width: 768px) {
+  .about-section { flex-direction: column !important; }
+}
+
+/* ─── Projects Responsive ────────────────────── */
+@media (max-width: 768px) {
+  .projects-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ─── Reduced Motion Accessibility ───────────── */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
