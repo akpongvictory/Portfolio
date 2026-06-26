@@ -1,8 +1,3 @@
-// src/components/About.jsx
-// whileInView triggers when the section scrolls into view.
-// viewport={{ once: true }} means it only animates once, not every scroll.
-// The stat cards use staggerChildren to cascade in one by one.
-
 import { motion } from "framer-motion";
 import { stats } from "../data";
 
@@ -23,45 +18,74 @@ export default function About() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        gap: "40px",
-        padding: "80px 5%",
-        color: "white",
+        gap: "60px",
+        padding: "120px 5%",
       }}
       className="about-section"
     >
-      {/* Bio text fades up from below */}
+      {/* Text Side */}
       <motion.div
         style={{ flex: 1 }}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        transition={{ duration: 0.7 }}
       >
-        <h2 style={{ fontSize: "2.5rem", marginBottom: "20px", color: "#22c55e" }}>
+        <div className="section-line" />
+        <h2 style={{
+          fontSize: "clamp(2rem, 4vw, 3rem)",
+          fontWeight: "800",
+          letterSpacing: "-1px",
+          marginBottom: "24px",
+          color: "white",
+        }}>
           About Me
         </h2>
-        <p style={{ lineHeight: 1.8, opacity: 0.9 }}>
-          I am a frontend developer passionate about transforming ideas into
-          responsive, accessible, and user-friendly web experiences. My current
-          toolkit includes HTML, CSS, JavaScript, React, Git, and GitHub, which
-          I use to build practical projects that solve real-world problems.
-          Coming from a healthcare background, I bring strong analytical
-          thinking, attention to detail, and a continuous learning mindset to
-          software development. I am actively expanding my skills in modern web
-          technologies while building projects that showcase creativity,
-          functionality, and clean design.
-        </p>
+        <p style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.9, marginBottom: "20px" }}>
+  I am a frontend developer passionate about transforming ideas into
+  responsive, accessible, and user-friendly web experiences. My toolkit
+  includes HTML, CSS, JavaScript, React, Git, and GitHub.
+</p>
+
+<p style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.9 }}>
+  Coming from a <span style={{ color: "#22c55e", fontWeight: "600" }}>healthcare background</span>,
+  with hands-on experience in HMO claims management, medical billing, and
+  health data analytics, I bring strong analytical thinking, attention to
+  detail, and a user-focused approach to building digital experiences.
+</p>
+
+        <motion.a
+          href="/pictures/Akpong_Victory_CV.pdf"
+          download
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            marginTop: "32px",
+            padding: "12px 28px",
+            border: "1px solid rgba(34,197,94,0.4)",
+            color: "#22c55e",
+            borderRadius: "6px",
+            textDecoration: "none",
+            fontWeight: "600",
+            fontSize: "0.9rem",
+            transition: "all 0.3s ease",
+          }}
+          whileHover={{ background: "rgba(34,197,94,0.1)", scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+        >
+          <i className="fa-solid fa-download"></i>
+          Download CV
+        </motion.a>
       </motion.div>
 
-      {/* Stat cards stagger in one by one */}
-      <div
-        style={{
-          flex: 1,
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "20px",
-        }}
-      >
+      {/* Stats Side */}
+      <div style={{
+        flex: 1,
+        display: "grid",
+        gridTemplateColumns: "repeat(2, 1fr)",
+        gap: "16px",
+      }}>
         {stats.map((stat, i) => (
           <motion.div
             key={stat.label}
@@ -71,15 +95,21 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             style={{
-              background: "rgba(255,255,255,0.12)",
-              backdropFilter: "blur(8px)",
-              padding: "30px",
-              borderRadius: "10px",
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              padding: "32px 24px",
+              borderRadius: "12px",
               textAlign: "center",
+              transition: "border-color 0.3s ease",
             }}
+            whileHover={{ borderColor: "rgba(34,197,94,0.4)" }}
           >
-            <h3 style={{ color: "#22c55e", fontSize: "3rem" }}>{stat.value}</h3>
-            <p style={{ marginTop: "8px", opacity: 0.9 }}>{stat.label}</p>
+            <h3 style={{ color: "#22c55e", fontSize: "2.8rem", fontWeight: "800" }}>
+              {stat.value}
+            </h3>
+            <p style={{ marginTop: "8px", color: "rgba(255,255,255,0.6)", fontSize: "0.9rem" }}>
+              {stat.label}
+            </p>
           </motion.div>
         ))}
       </div>

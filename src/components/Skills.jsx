@@ -1,76 +1,69 @@
-// src/components/Skills.jsx
-// Renders skill pills from data.js. Icons are optional —
-// skills without an icon render text-only cleanly.
-
+import { motion } from "framer-motion";
 import { skills } from "../data";
 
 export default function Skills() {
   return (
-    <section
-      id="skills"
-      style={{ padding: "80px 5%", textAlign: "center" }}
-    >
-      <h2
-        style={{
-          fontSize: "2.5rem",
-          marginBottom: "16px",
-          color: "wheat",
-        }}
+    <section id="skills" style={{ padding: "120px 5%" }}>
+      <motion.div
+        style={{ textAlign: "center", marginBottom: "64px" }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
       >
-        Skills
-      </h2>
-
-      <p
-        style={{
+        <div className="section-line" style={{ margin: "0 auto 24px" }} />
+        <h2 style={{
+          fontSize: "clamp(2rem, 4vw, 3rem)",
+          fontWeight: "800",
+          letterSpacing: "-1px",
           color: "white",
-          opacity: 0.85,
-          maxWidth: "700px",
-          margin: "0 auto 48px",
-        }}
-      >
-        Technologies and tools I currently use to build responsive and
-        interactive web experiences.
-      </p>
+          marginBottom: "16px",
+        }}>
+          Skills & Tools
+        </h2>
+        <p style={{ color: "rgba(255,255,255,0.5)", maxWidth: "500px", margin: "0 auto" }}>
+          Technologies I use to build responsive, interactive web experiences.
+        </p>
+      </motion.div>
 
-      <div
-        style={{
-          maxWidth: "1000px",
-          margin: "0 auto",
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: "20px",
-        }}
-      >
-        {skills.map((skill) => (
-          <div
+      <div style={{
+        maxWidth: "900px",
+        margin: "0 auto",
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        gap: "16px",
+      }}>
+        {skills.map((skill, i) => (
+          <motion.div
             key={skill.id}
             style={{
-              background: "rgba(255,255,255,0.1)",
-              backdropFilter: "blur(10px)",
-              color: "white",
-              padding: "15px 25px",
-              borderRadius: "50px",
-              border: "1px solid rgba(255,255,255,0.2)",
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              color: "rgba(255,255,255,0.8)",
+              padding: "12px 24px",
+              borderRadius: "8px",
               fontWeight: "600",
+              fontSize: "0.9rem",
               display: "flex",
               alignItems: "center",
               gap: "8px",
-              transition: "0.3s ease",
               cursor: "default",
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#15803d";
-              e.currentTarget.style.transform = "translateY(-5px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-              e.currentTarget.style.transform = "translateY(0)";
+            initial={{ opacity: 0, scale: 0.85 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: i * 0.06 }}
+            whileHover={{
+              background: "rgba(34,197,94,0.1)",
+              borderColor: "rgba(34,197,94,0.4)",
+              color: "#22c55e",
+              y: -4,
             }}
           >
-            {skill.icon && <i className={skill.icon}></i>}
+            {skill.icon && <i className={skill.icon} style={{ fontSize: "1rem" }}></i>}
             {skill.label}
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
