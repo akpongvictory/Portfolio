@@ -9,7 +9,7 @@ export const projects = [
     description: "A responsive personal portfolio website built with HTML and CSS.",
     image: "/pictures/portfolio-preview.png",
     liveUrl: "https://akpongvictory.github.io/Portfolio/",
-    codeUrl: "https://github.com/akpongvictory/Portfolio.git",
+    codeUrl: null,
   },
   
   {
@@ -26,7 +26,7 @@ export const projects = [
     description: "A marketing platform for livestock farmers.",
     image: "/pictures/farm2flame-preview.png",
     liveUrl: "https://farm-to-flame--gifted-hands.replit.app/",
-    codeUrl: "https://github.com/akpongvictory/Farm-To-Flame-mvp.git",
+    codeUrl: null,
   },
   {
     id: 5,
@@ -34,7 +34,7 @@ export const projects = [
     description: "A game that tests the user's cognitive ability.",
     image: "/pictures/number-ninja-preview.png",
     liveUrl: "https://number-ninja-game.vercel.app/",
-    codeUrl: "https://github.com/akpongvictory/Number-Ninja-Game.git",
+    codeUrl: null,
   },
 
   {
@@ -63,8 +63,8 @@ export const skills = [
 ];
 
 export const stats = [
-  { value: "4+", label: "Frontend Projects" },
-  { value: "3+", label: "Months Learning" },
+  { value: "8+", label: "Built Projects" },
+  { value: "7+", label: "Months Learning" },
   { value: "100%", label: "Commitment" },
   { value: "2", label: "Team Projects" },
 ];

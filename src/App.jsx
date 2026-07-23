@@ -1,20 +1,31 @@
-// src/App.jsx
-// The root component. Imports and assembles every section in order.
-// Think of this as your index.html's <body> — pure composition, no logic.
+import { useContext } from "react";
+import { ThemeProvider, ThemeContext } from "./ThemeContext";
+import AnimatedBackground from "./components/AnimatedBackground.jsx";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About.jsx";
+import Projects from "./components/Projects.jsx";
+import Skills from "./components/Skills";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
-import Skills from './components/Skills'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+// Inner app reads the theme context
+function AppInner() {
+  const { theme } = useContext(ThemeContext);
 
-function App() {
   return (
-    <>
+    <div
+      style={{
+        minHeight: "100vh",
+        background: theme === "dark" ? "#0a0a0a" : "#f8fafc",
+        color: theme === "dark" ? "#ffffff" : "#0f172a",
+        transition: "background 0.3s ease, color 0.3s ease",
+        position: "relative",
+      }}
+    >
+      <AnimatedBackground />
       <Navbar />
-      <main>
+      <main style={{ position: "relative", zIndex: 1 }}>
         <Hero />
         <About />
         <Projects />
@@ -22,8 +33,15 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+// Wrap everything in ThemeProvider
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AppInner />
+    </ThemeProvider>
+  );
+}
