@@ -1,47 +1,38 @@
-import { useContext } from "react";
-import { ThemeProvider, ThemeContext } from "./ThemeContext";
-import AnimatedBackground from "./components/AnimatedBackground.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About.jsx";
-import Projects from "./components/Projects.jsx";
-import Skills from "./components/Skills";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-// Inner app reads the theme context
-function AppInner() {
-  const { theme } = useContext(ThemeContext);
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Software from "./pages/Software";
+import Healthcare from "./pages/Healthcare";
+import Projects from "./pages/Projects";
+import Resume from "./pages/Resume";
+import Contact from "./pages/Contact";
 
+function App() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: theme === "dark" ? "#0a0a0a" : "#f8fafc",
-        color: theme === "dark" ? "#ffffff" : "#0f172a",
-        transition: "background 0.3s ease, color 0.3s ease",
-        position: "relative",
-      }}
-    >
-      <AnimatedBackground />
-      <Navbar />
-      <main style={{ position: "relative", zIndex: 1 }}>
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-[#0A0A0A] text-white flex flex-col">
+        <Navbar />
+
+        <main className="pt-20 flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/software" element={<Software />} />
+            <Route path="/healthcare" element={<Healthcare />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
-// Wrap everything in ThemeProvider
-export default function App() {
-  return (
-    <ThemeProvider>
-      <AppInner />
-    </ThemeProvider>
-  );
-}
+export default App;

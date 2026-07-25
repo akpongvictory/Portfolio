@@ -1,154 +1,122 @@
 @import "tailwindcss";
 
 /* ─── Design Tokens ─────────────────────────── */
-:root {
-  --brand: #22c55e;
-  --brand-dark: #15803d;
-  --bg-dark: #0a0a0a;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --border: rgba(255, 255, 255, 0.08);
-  --text-primary: #ffffff;
-  --text-muted: rgba(255, 255, 255, 0.6);
-}
-
 :root,
 [data-theme="dark"] {
-  --color-bg: #0a0a0a;
-  --color-text: #ffffff;
-  --color-muted: #9ca3af;
-  --color-card: rgba(255, 255, 255, 0.04);
-  --color-card-border: rgba(34, 197, 94, 0.15);
-  --color-brand: #22c55e;
-  --color-brand-dark: #15803d;
-  --color-nav-bg: rgba(10, 10, 10, 0.92);
+  --bg:           #0f172a;      /* deep navy-slate, not pure black */
+  --bg-surface:   #1e293b;      /* card surfaces — slightly lighter */
+  --bg-elevated:  #334155;      /* hover states, borders */
+  --text:         #f1f5f9;      /* near-white — soft, not harsh */
+  --text-muted:   #94a3b8;      /* secondary text */
+  --text-faint:   #64748b;      /* placeholders, dividers */
+  --brand:        #22c55e;      /* green accent */
+  --brand-dark:   #16a34a;      /* green hover */
+  --brand-glow:   rgba(34,197,94,0.12);
+  --border:       rgba(148,163,184,0.1);
+  --border-brand: rgba(34,197,94,0.2);
+  --nav-bg:       rgba(15,23,42,0.92);
+  --card-bg:      rgba(30,41,59,0.6);
+  --shadow:       0 4px 24px rgba(0,0,0,0.4);
 }
  
-/* Light theme */
+/* ── LIGHT THEME ──────────────────────────────────────
+   Warm off-white — professional, easy on the eyes.
+   Not blinding white. Think Linear, Notion, Vercel docs.
+──────────────────────────────────────────────────────── */
 [data-theme="light"] {
-  --color-bg: #f8fafc;
-  --color-text: #0f172a;
-  --color-muted: #64748b;
-  --color-card: rgba(0, 0, 0, 0.03);
-  --color-card-border: rgba(34, 197, 94, 0.25);
-  --color-brand: #16a34a;
-  --color-brand-dark: #15803d;
-  --color-nav-bg: rgba(248, 250, 252, 0.92);
+  --bg:           #f8f7f4;      /* warm off-white, not pure white */
+  --bg-surface:   #ffffff;      /* card surfaces */
+  --bg-elevated:  #f1ede6;      /* hover states */
+  --text:         #1a1a2e;      /* near-black — deep, readable */
+  --text-muted:   #4a5568;      /* secondary text */
+  --text-faint:   #a0aec0;      /* placeholders */
+  --brand:        #16a34a;      /* slightly deeper green — readable on light */
+  --brand-dark:   #15803d;
+  --brand-glow:   rgba(22,163,74,0.08);
+  --border:       rgba(0,0,0,0.08);
+  --border-brand: rgba(22,163,74,0.25);
+  --nav-bg:       rgba(248,247,244,0.92);
+  --card-bg:      rgba(255,255,255,0.8);
+  --shadow:       0 4px 24px rgba(0,0,0,0.08);
 }
  
-/* Smooth theme transitions on everything */
-*,
-*::before,
-*::after {
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
-}
- 
-───────────────────────────────────────────────────── */
- 
-@media (min-width: 768px) {
-  .mobile-controls {
-    display: none !important;
-  }
-  .nav-links-desktop {
-    display: flex !important;
-  }
-}
- 
-@media (max-width: 767px) {
-  .nav-links-desktop {
-    display: none !important;
-  }
-  .mobile-controls {
-    display: flex !important;
-  }
-}
-
-
-/* ─── Global Reset ───────────────────────────── */
+/* ── SMOOTH TRANSITIONS ──────────────────────────────── */
 *, *::before, *::after {
-  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.25s ease,
+              border-color 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+/* ── BODY ─────────────────────────────────────────────
+   Replace your existing body rule with this:
+──────────────────────────────────────────────────────── */
+body {
   margin: 0;
   padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #0a0a0a;
-  background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(34, 197, 94, 0.06) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(34, 197, 94, 0.04) 0%, transparent 50%);
-  background-attachment: fixed;
-  color: var(--text-primary);
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
-
-/* ─── Scrollbar ──────────────────────────────── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 2px; }
-
-
- .hero-section img {
-  width: 350px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 50%;
+ 
+/* ── SCROLLBAR ────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--brand);
+  border-radius: 3px;
 }
-
-
-/* ─── Navbar Responsive ──────────────────────── */
-@media (max-width: 768px) {
-  .desktop-links { display: none !important; }
-  .desktop-only-btn { display: none !important; }
-  .hamburger { display: block !important; }
-}
-
-/* ─── Hero Responsive ────────────────────────── */
-@media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column !important;
-    text-align: center;
-    padding-top: 60px !important;
-    min-height: auto !important;
-  }
-  .hero-section img {
-   width: min(65vw, 240px);
-  height: min(65vw, 240px);
-
-  }
-}
-
-/* ─── About Responsive ───────────────────────── */
-@media (max-width: 768px) {
-  .about-section { flex-direction: column !important; }
-}
-
-/* ─── Projects Responsive ────────────────────── */
-@media (max-width: 768px) {
-  .projects-grid { grid-template-columns: 1fr !important; }
-}
-
-/* ─── Typewriter cursor color ────────────────── */
-.Typewriter__cursor {
-  color: var(--brand);
-  font-weight: 300;
-}
-
-/* ─── Section divider line ───────────────────── */
+ 
+/* ── SECTION LINE ACCENT ──────────────────────────────── */
 .section-line {
-  width: 60px;
+  width: 48px;
   height: 3px;
   background: var(--brand);
   border-radius: 2px;
-  margin-bottom: 24px;
+  margin-bottom: 1rem;
 }
+ 
+/* ── RESPONSIVE NAV VISIBILITY ────────────────────────── */
+@media (min-width: 768px) {
+  .mobile-controls { display: none !important; }
+  .nav-links-desktop { display: flex !important; }
+}
+@media (max-width: 767px) {
+  .nav-links-desktop { display: none !important; }
+  .mobile-controls { display: flex !important; }
+}
+ 
+/* ── HERO RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 767px) {
+  .hero-grid {
+    flex-direction: column-reverse !important;
+    text-align: center;
+    padding-top: 5rem !important;
+  }
+  .hero-image-wrap {
+    width: 200px !important;
+    height: 200px !important;
+    margin: 0 auto;
+  }
+  .hero-socials { justify-content: center !important; }
+  .hero-ctas { justify-content: center !important; }
+}
+ 
+/* ── PROJECTS RESPONSIVE ─────────────────────────────── */
+@media (max-width: 600px) {
+  .carousel-nav-btn { display: none !important; }
+}
+ 
+/* ── SKILLS GRID ──────────────────────────────────────── */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+ 
 
-/* ─── Reduced Motion ─────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-}
+
+
+
+
+

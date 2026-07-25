@@ -1,64 +1,210 @@
+import { motion } from "framer-motion";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaArrowUp,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+
 export default function Footer() {
-  const socials = [
-    {
-      icon: "fa-brands fa-github",
-      href: "https://github.com/akpongvictory",
-    },
-    {
-      icon: "fa-brands fa-linkedin",
-      href: "https://linkedin.com/in/victoryakpong",
-    },
-    {
-      icon: "fa-brands fa-x-twitter",
-      href: "https://x.com/",
-    },
-  ];
 
   return (
-    <footer
-      style={{
-        padding: "40px 5%",
-        borderTop: "1px solid rgba(255,255,255,0.06)",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        flexWrap: "wrap",
-        gap: "20px",
-      }}
-    >
-      <p
-        style={{
-          color: "rgba(255,255,255,0.35)",
-          fontSize: "0.85rem",
-        }}
-      >
-        © 2026 Akpong Victory. Built with React & Framer Motion.
-      </p>
 
-      <div style={{ display: "flex", gap: "20px" }}>
-        {socials.map((s) => (
-          <a
-            key={s.icon}
-            href={s.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              color: "rgba(255,255,255,0.35)",
-              fontSize: "1.2rem",
-              textDecoration: "none",
-              transition: "color 0.3s ease",
+    <footer className="border-t border-[var(--border)] bg-[var(--bg)]">
+
+      <div className="max-w-7xl mx-auto px-6 py-14">
+
+
+        {/* =========================
+            FOOTER TOP
+        ========================== */}
+
+        <div className="grid md:grid-cols-3 gap-10">
+
+
+          {/* BRAND */}
+
+          <div>
+
+            <h2 className="text-3xl font-black">
+
+              <span className="text-[var(--brand)]">
+                Akpong
+              </span>
+
+              .Dev
+
+            </h2>
+
+
+            <p className="mt-5 text-[var(--text-muted)] leading-7">
+
+              Software Developer combining modern web
+              development with healthcare operations
+              experience.
+
+            </p>
+
+
+          </div>
+
+
+
+          {/* QUICK LINKS */}
+
+          <div>
+
+            <h3 className="font-bold text-xl mb-5">
+              Quick Links
+            </h3>
+
+
+            <div className="flex flex-col gap-3 text-[var(--text-muted)]">
+
+
+              <Link
+                to="/about"
+                className="hover:text-[var(--brand)]"
+              >
+                About
+              </Link>
+
+
+              <Link
+                to="/software"
+                className="hover:text-[var(--brand)]"
+              >
+                Software
+              </Link>
+
+
+              <Link
+                to="/healthcare"
+                className="hover:text-[var(--brand)]"
+              >
+                Healthcare
+              </Link>
+
+
+              <Link
+                to="/projects"
+                className="hover:text-[var(--brand)]"
+              >
+                Projects
+              </Link>
+
+
+            </div>
+
+
+          </div>
+
+
+
+          {/* SOCIAL */}
+
+          <div>
+
+            <h3 className="font-bold text-xl mb-5">
+              Connect
+            </h3>
+
+
+            <div className="flex gap-5 text-2xl">
+
+
+              <a
+                href="#"
+                className="hover:text-[var(--brand)]"
+              >
+                <FaGithub />
+              </a>
+
+
+              <a
+                href="#"
+                className="hover:text-[var(--brand)]"
+              >
+                <FaLinkedin />
+              </a>
+
+
+              <a
+                href="#"
+                className="hover:text-[var(--brand)]"
+              >
+                <FaEnvelope />
+              </a>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        {/* =========================
+            FOOTER BOTTOM
+        ========================== */}
+
+
+        <div className="mt-12 pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-5">
+
+
+          <p className="text-[var(--text-muted)] text-sm">
+
+            © {new Date().getFullYear()} Akpong Victory.
+            All rights reserved.
+
+          </p>
+
+
+
+          <motion.button
+
+            whileHover={{
+              scale:1.1
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = "#22c55e";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = "rgba(255,255,255,0.35)";
-            }}
+
+            onClick={() =>
+              window.scrollTo({
+                top:0,
+                behavior:"smooth"
+              })
+            }
+
+            className="
+            w-12
+            h-12
+            rounded-full
+            bg-[var(--brand)]
+            text-black
+            flex
+            items-center
+            justify-center
+            "
+
           >
-            <i className={s.icon}></i>
-          </a>
-        ))}
+
+            <FaArrowUp />
+
+          </motion.button>
+
+
+        </div>
+
+
       </div>
+
+
     </footer>
+
   );
-}
+
+} 
