@@ -31,10 +31,12 @@ export default function Footer() {
             <h2 className="text-3xl font-black">
 
               <span className="text-[var(--brand)]">
-                Akpong
-              </span>
+            Akpong
+          </span>
 
-              .Dev
+          <span className="text-[var(--text)]">
+            .Dev
+          </span> 
 
             </h2>
 
@@ -56,7 +58,7 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="font-bold text-xl mb-5">
+            <h3 className="font-bold text-xl mb-5 text-[var(--text)]">
               Quick Links
             </h3>
 
@@ -103,47 +105,53 @@ export default function Footer() {
 
 
 
-          {/* SOCIAL */}
+         {/* SOCIAL */}
 
-          <div>
+<div>
 
-            <h3 className="font-bold text-xl mb-5">
-              Connect
-            </h3>
-
-
-            <div className="flex gap-5 text-2xl">
+  <h3 className="font-bold text-xl mb-5 text-[var(--text)]">
+    Connect
+  </h3>
 
 
-              <a
-                href="#"
-                className="hover:text-[var(--brand)]"
-              >
-                <FaGithub />
-              </a>
+      <div className="flex gap-5 text-2xl text-[var(--text-muted)]">
 
 
-              <a
-                href="#"
-                className="hover:text-[var(--brand)]"
-              >
-                <FaLinkedin />
-              </a>
+        <a
+          href="https://github.com/akpongvictory"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-[var(--brand)] duration-300"
+          aria-label="GitHub"
+        >
+          <FaGithub />
+        </a>
 
 
-              <a
-                href="#"
-                className="hover:text-[var(--brand)]"
-              >
-                <FaEnvelope />
-              </a>
+        <a
+          href="https://linkedin.com/in/victoryakpong"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-[var(--brand)] duration-300"
+          aria-label="LinkedIn"
+        >
+          <FaLinkedin />
+        </a>
 
 
-            </div>
+        <a
+          href="mailto:akpongvictory@gmail.com"
+          className="hover:text-[var(--brand)] duration-300"
+          aria-label="Email"
+        >
+          <FaEnvelope />
+        </a>
 
 
-          </div>
+      </div>
 
+
+    </div>
 
         </div>
 

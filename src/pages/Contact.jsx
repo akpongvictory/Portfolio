@@ -1,159 +1,361 @@
 import { motion } from "framer-motion";
-import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
-import toast, { Toaster } from "react-hot-toast";
+import {
+FaEnvelope,
+FaPhoneAlt,
+FaLinkedin,
+FaGithub,
+FaMapMarkerAlt
+} from "react-icons/fa";
 
-export default function Contact() {
+import toast,{Toaster} from "react-hot-toast";
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    toast.success("Message sent successfully!");
-    e.target.reset();
-  };
 
-  return (
-    <>
-      <Toaster position="top-right" />
+export default function Contact(){
 
-      <section className="min-h-screen py-28 px-6">
 
-        <div className="max-w-7xl mx-auto">
+const handleSubmit=(e)=>{
 
-          {/* ================= HEADER ================= */}
+e.preventDefault();
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+toast.success("Message sent successfully!");
 
-            <p className="uppercase tracking-[4px] text-[var(--brand)] font-semibold">
-              Contact
-            </p>
+e.target.reset();
 
-            <h1 className="text-5xl font-black mt-4">
-              Let's Build Something
-              <span className="text-[var(--brand)]"> Amazing</span>
-            </h1>
+};
 
-            <p className="mt-8 text-lg max-w-3xl text-[var(--text-muted)] leading-8">
-              Whether it's software development, healthcare technology,
-              collaboration or freelance work, I'm always open to discussing
-              exciting opportunities.
-            </p>
 
-          </motion.div>
 
-          {/* ================= CONTENT ================= */}
+return (
 
-          <div className="grid lg:grid-cols-2 gap-12 mt-20">
+<>
 
-            {/* CONTACT INFO */}
+<Toaster position="top-right"/>
 
-            <div className="space-y-6">
 
-              <div className="bg-[var(--card-bg)] border border-[var(--border)] rounded-3xl p-6 flex gap-5">
+<section className="min-h-screen py-28 px-6">
 
-                <FaEnvelope className="text-3xl text-[var(--brand)] mt-1"/>
 
-                <div>
-                  <h3 className="font-bold text-xl">Email</h3>
-                  <p className="text-[var(--text-muted)]">
-                    akpongvictory@gemail.com
-                  </p>
-                </div>
+<div className="max-w-7xl mx-auto">
 
-              </div>
 
-              <div className="bg-[var(--card-bg)] border border-[var(--border)] rounded-3xl p-6 flex gap-5">
+<motion.div
 
-                <FaPhoneAlt className="text-3xl text-[var(--brand)] mt-1"/>
+initial={{
+opacity:0,
+y:30
+}}
 
-                <div>
-                  <h3 className="font-bold text-xl">Phone</h3>
-                  <p className="text-[var(--text-muted)]">
-                    +234 7031517558
-                  </p>
-                </div>
+whileInView={{
+opacity:1,
+y:0
+}}
 
-              </div>
+viewport={{
+once:true
+}}
 
-              <div className="bg-[var(--card-bg)] border border-[var(--border)] rounded-3xl p-6 flex gap-5">
+>
 
-                <FaMapMarkerAlt className="text-3xl text-[var(--brand)] mt-1"/>
 
-                <div>
-                  <h3 className="font-bold text-xl">Location</h3>
-                  <p className="text-[var(--text-muted)]">
-                    Nigeria
-                  </p>
-                </div>
+<p className="
+uppercase
+tracking-[4px]
+text-[var(--brand)]
+font-semibold
+">
 
-              </div>
+Contact
 
-              {/* SOCIALS */}
+</p>
 
-              <div className="flex gap-5 pt-4">
 
-                <a href="https://github.com/akpongvictory" className="text-3xl hover:text-[var(--brand)]">
-                  <FaGithub />
-                </a>
 
-                <a href="https://linkedin.com/in/victoryakpong" className="text-3xl hover:text-[var(--brand)]">
-                  <FaLinkedin />
-                </a>
+<h1 className="
+text-5xl
+font-black
+mt-4
+">
 
-              </div>
+Let's Build Something
 
-            </div>
+<span className="text-[var(--brand)]">
+ Amazing
+</span>
 
-            {/* FORM */}
+</h1>
 
-            <form
-              onSubmit={handleSubmit}
-              className="bg-[var(--card-bg)] border border-[var(--border)] rounded-3xl p-8 space-y-6"
-            >
 
-              <input
-                type="text"
-                placeholder="Full Name"
-                required
-                className="w-full p-4 rounded-xl bg-[var(--bg-elevated)] outline-none"
-              />
 
-              <input
-                type="email"
-                placeholder="Email Address"
-                required
-                className="w-full p-4 rounded-xl bg-[var(--bg-elevated)] outline-none"
-              />
+<p className="
+mt-8
+text-lg
+max-w-3xl
+text-[var(--text-muted)]
+leading-8
+">
 
-              <input
-                type="text"
-                placeholder="Subject"
-                required
-                className="w-full p-4 rounded-xl bg-[var(--bg-elevated)] outline-none"
-              />
+Whether it's software development, healthcare technology,
+collaboration or freelance work, I'm always open to discussing
+exciting opportunities.
 
-              <textarea
-                rows="6"
-                placeholder="Your Message"
-                required
-                className="w-full p-4 rounded-xl bg-[var(--bg-elevated)] outline-none resize-none"
-              ></textarea>
+</p>
 
-              <button
-                className="w-full bg-[var(--brand)] hover:bg-[var(--brand-dark)] text-black font-bold py-4 rounded-xl"
-              >
-                Send Message
-              </button>
 
-            </form>
+</motion.div>
 
-          </div>
 
-        </div>
 
-      </section>
-    </>
-  );
+
+
+<div className="
+grid
+lg:grid-cols-2
+gap-12
+mt-20
+">
+
+
+
+{/* INFO */}
+
+
+<div className="space-y-6">
+
+
+{[
+{
+icon:<FaEnvelope/>,
+title:"Email",
+text:"akpongvictory@gmail.com"
+},
+{
+icon:<FaPhoneAlt/>,
+title:"Phone",
+text:"+234 7031517558"
+},
+{
+icon:<FaMapMarkerAlt/>,
+title:"Location",
+text:"Nigeria"
+}
+
+].map((item)=>(
+
+
+<div
+key={item.title}
+className="
+bg-[var(--card-bg)]
+border
+border-[var(--border)]
+rounded-3xl
+p-6
+flex
+gap-5
+"
+>
+
+<div className="
+text-3xl
+text-[var(--brand)]
+mt-1
+">
+
+{item.icon}
+
+</div>
+
+
+<div>
+
+<h3 className="
+font-bold
+text-xl
+text-[var(--text)]
+">
+
+{item.title}
+
+</h3>
+
+
+<p className="
+text-[var(--text-muted)]
+">
+
+{item.text}
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+))}
+
+
+<div className="
+flex
+gap-5
+pt-4
+text-[var(--text-muted)]
+">
+
+<a
+href="https://github.com/akpongvictory"
+target="_blank"
+rel="noopener noreferrer"
+className="
+text-3xl
+hover:text-[var(--brand)]
+"
+>
+
+<FaGithub/>
+
+</a>
+
+<a
+href="https://linkedin.com/in/victoryakpong"
+target="_blank"
+rel="noopener noreferrer"
+className="
+text-3xl
+hover:text-[var(--brand)]
+"
+>
+
+<FaLinkedin/>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+{/* FORM */}
+
+<form
+
+onSubmit={handleSubmit}
+
+className="
+bg-[var(--card-bg)]
+border
+border-[var(--border)]
+rounded-3xl
+p-8
+space-y-6
+"
+
+>
+
+
+{[
+{
+type:"text",
+placeholder:"Full Name"
+},
+{
+type:"email",
+placeholder:"Email Address"
+},
+{
+type:"text",
+placeholder:"Subject"
+}
+
+].map((field)=>(
+
+
+<input
+
+key={field.placeholder}
+
+type={field.type}
+
+placeholder={field.placeholder}
+
+required
+
+className="
+w-full
+p-4
+rounded-xl
+bg-[var(--bg-elevated)]
+text-[var(--text)]
+placeholder:text-[var(--text-muted)]
+outline-none
+border
+border-[var(--border)]
+focus:border-[var(--brand)]
+"
+
+/>
+
+
+))}
+
+<textarea
+
+rows="6"
+
+placeholder="Your Message"
+
+required
+
+className="
+w-full
+p-4
+rounded-xl
+bg-[var(--bg-elevated)]
+text-[var(--text)]
+placeholder:text-[var(--text-muted)]
+outline-none
+border
+border-[var(--border)]
+focus:border-[var(--brand)]
+resize-none
+"
+
+/>
+
+
+<button
+
+className="
+w-full
+bg-[var(--brand)]
+hover:bg-[var(--brand-dark)]
+text-[var(--bg)]
+font-bold
+py-4
+rounded-xl
+"
+
+>
+
+Send Message
+
+</button>
+
+
+</form>
+
+
+</div>
+
+</div>
+
+</section>
+
+</>
+);
+
 }

@@ -21,10 +21,10 @@ export default function Home() {
           transition={{ duration: .8 }}
         >
           <p className="text-[var(--brand)] uppercase tracking-[4px] font-semibold mb-4">
-            Welcome
+            Welcome...
           </p>
 
-          <h1 className="text-5xl lg:text-7xl font-black leading-tight">
+          <h1 className="text-5xl lg:text-7xl font-black leading-tight text-[var(--text)]">
             Hi,
             <br />
             I'm
@@ -42,8 +42,8 @@ export default function Home() {
                 deleteSpeed: 25,
                 strings: [
                   "Software Developer",
-                  "Frontend Engineer",
                   "Healthcare Technology Professional",
+                  "Full Stack Engineer",
                   "Claims Management Specialist",
                 ],
               }}
@@ -60,7 +60,7 @@ export default function Home() {
 
             <Link
               to="/projects"
-              className="px-7 py-4 rounded-xl bg-[var(--brand)] hover:bg-[var(--brand-dark)] font-semibold flex items-center gap-2"
+              className="px-7 py-4 rounded-xl bg-[var(--brand)] hover:bg-[var(--brand-dark)] text-black font-semibold flex items-center gap-2"
             >
               View Projects
               <FaArrowRight />
@@ -68,7 +68,7 @@ export default function Home() {
 
             <Link
               to="/contact"
-              className="px-7 py-4 rounded-xl border border-[var(--border)] hover:border-[var(--brand)]"
+              className="px-7 py-4 rounded-xl border border-[var(--border)] hover:border-[var(--brand)] text-[var(--text)]"
             >
               Hire Me
             </Link>
@@ -77,7 +77,7 @@ export default function Home() {
               href="/pictures/Akpong_Victory_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-7 py-4 rounded-xl border border-[var(--border)] hover:border-[var(--brand)]"
+              className="px-7 py-4 rounded-xl border border-[var(--border)] hover:border-[var(--brand)] text-[var(--text)]"
             >
               Download CV
             </a>
@@ -92,7 +92,7 @@ export default function Home() {
   rel="noopener noreferrer"
   aria-label="GitHub"
 >
-  <FaGithub className="hover:text-[var(--brand)] duration-300" />
+  <FaGithub className="text-[var(--text-muted)] hover:text-[var(--brand)] duration-300" />
 </a>
 
 <a
@@ -101,14 +101,14 @@ export default function Home() {
   rel="noopener noreferrer"
   aria-label="LinkedIn"
 >
-  <FaLinkedin className="hover:text-[var(--brand)] duration-300" />
+  <FaLinkedin className="text-[var(--text-muted)] hover:text-[var(--brand)] duration-300" />
 </a>
 
 <a
   href="mailto:akpongvictory@gmail.com"
   aria-label="Email"
 >
-  <FaEnvelope className="hover:text-[var(--brand)] duration-300" />
+  <FaEnvelope className="text-[var(--text-muted)] hover:text-[var(--brand)] duration-300" />
 </a>
 
           </div>

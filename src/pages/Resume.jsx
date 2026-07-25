@@ -149,9 +149,14 @@ export default function Resume() {
               {certifications.map((item) => (
 
                 <div
-                  key={item}
-                  className="rounded-xl bg-[var(--bg-elevated)] p-4"
-                >
+                    key={item}
+                    className="
+                    rounded-xl
+                    bg-[var(--bg-elevated)]
+                    text-[var(--text)]
+                    p-4
+                    "
+                    >
                   {item}
                 </div>
 
@@ -177,9 +182,14 @@ export default function Resume() {
               {competencies.map((item) => (
 
                 <span
-                  key={item}
-                  className="px-4 py-2 rounded-full bg-[var(--bg-elevated)]"
-                >
+                  className="
+                  px-4
+                  py-2
+                  rounded-full
+                  bg-[var(--bg-elevated)]
+                  text-[var(--text)]
+                  "
+                  >
                   {item}
                 </span>
 
