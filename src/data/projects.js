@@ -3,7 +3,7 @@ const projects = [
  {
   title: "HopeHill Claims Tracker",
   category: "Healthcare Technology",
-  image: "/public/pictures/hopehill-dashboard.png",
+  image: "/pictures/hopehill-dashboard.png",
   description:
     "A full-stack healthcare claims management platform built with React and Supabase. The application streamlines claims processing, patient management, provider reporting, and executive analytics through a responsive dashboard backed by a PostgreSQL database.",
   stack: [

@@ -29,7 +29,8 @@ export default function Home() {
             <br />
             I'm
             <span className="text-[var(--brand)]">
-              {" "}Akpong Victory
+              {" "} Victory <br />
+               Akpong
             </span>
           </h1>
 
