@@ -6,6 +6,8 @@ import {
   FaLinkedin,
   FaEnvelope,
   FaArrowRight,
+  FaWhatsapp,
+  FaFacebook
 } from "react-icons/fa";
 
 export default function Home() {
@@ -85,6 +87,9 @@ export default function Home() {
 
           </div>
 
+
+              {/* <!-- SOCIAL MEDIA LINKS AND ICONS --> */}
+              
           <div className="flex gap-5 mt-10 text-2xl">
 
             <a
@@ -110,6 +115,23 @@ export default function Home() {
   aria-label="Email"
 >
   <FaEnvelope className="text-[var(--text-muted)] hover:text-[var(--brand)] duration-300" />
+</a>
+
+<a
+  href="https://wa.me/2349048249675"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="WhatsApp"
+>
+  <FaWhatsapp className="text-[var(--text-muted)] hover:text-[var(--brand)] duration-300" />
+</a>
+
+              <a
+  href="https://facebook.com/victoryben"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Facebook">
+  <FaFacebook className="text-[var(--text-muted)] hover:text-[var(--brand)] duration-300" />
 </a>
 
           </div>

@@ -32,7 +32,7 @@ const projects = [
       "Vite",
     ],
     github: "",
-    demo: "",
+    demo: "https://portfolio-xi-indol-78.vercel.app/",
     featured: true,
   },
 
@@ -43,12 +43,13 @@ const projects = [
     description:
       "A technology solution focused on addressing food waste challenges.",
     stack: [
+      "Replit",
       "React",
       "JavaScript",
       "Tailwind CSS",
     ],
     github: "",
-    demo: "",
+    demo: "https://farm-to-flame--gifted-hands.replit.app/",
     featured: true,
   },
 
@@ -64,7 +65,7 @@ const projects = [
       "CSS",
     ],
     github: "",
-    demo: "",
+    demo: "https://number-ninja-game.vercel.app/",
   },
 
   {
@@ -78,7 +79,7 @@ const projects = [
       "Tailwind CSS",
     ],
     github: "",
-    demo: "",
+    demo: "https://pathfinder-ng-ten.vercel.app/",
   }
 
 ];

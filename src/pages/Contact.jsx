@@ -4,7 +4,9 @@ FaEnvelope,
 FaPhoneAlt,
 FaLinkedin,
 FaGithub,
-FaMapMarkerAlt
+FaMapMarkerAlt,
+FaWhatsapp,
+FaFacebook
 } from "react-icons/fa";
 
 import toast,{Toaster} from "react-hot-toast";
@@ -204,34 +206,43 @@ pt-4
 text-[var(--text-muted)]
 ">
 
+{/* SOCIAL MEDIA LINKS */}
 <a
-href="https://github.com/akpongvictory"
-target="_blank"
-rel="noopener noreferrer"
-className="
-text-3xl
-hover:text-[var(--brand)]
-"
->
+    href="https://github.com/akpongvictory"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-3xl text-[var(--text-muted)] hover:text-[var(--brand)] duration-300"
+  >
+    <FaGithub />
+  </a>
 
-<FaGithub/>
+  <a
+    href="https://linkedin.com/in/victoryakpong"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-3xl text-[var(--text-muted)] hover:text-[var(--brand)] duration-300"
+  >
+    <FaLinkedin />
+  </a>
 
-</a>
+  <a
+    href="https://wa.me/2349048249675"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-3xl text-[var(--text-muted)] hover:text-[var(--brand)] duration-300"
+  >
+    <FaWhatsapp />
+  </a>
 
-<a
-href="https://linkedin.com/in/victoryakpong"
-target="_blank"
-rel="noopener noreferrer"
-className="
-text-3xl
-hover:text-[var(--brand)]
-"
->
-
-<FaLinkedin/>
-
-</a>
-
+  <a
+    href="https://facebook.com/victoryben"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    className="text-3xl text-[var(--text-muted)] hover:text-[var(--brand)] duration-300"
+  >
+    <FaFacebook />
+  </a>
 
 </div>
 

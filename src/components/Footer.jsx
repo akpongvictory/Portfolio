@@ -4,6 +4,8 @@ import {
   FaLinkedin,
   FaEnvelope,
   FaArrowUp,
+  FaWhatsapp,
+  FaFacebook
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -145,6 +147,23 @@ export default function Footer() {
           aria-label="Email"
         >
           <FaEnvelope />
+        </a>
+
+        <a
+          href="https://wa.me/2349048249675"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+          <FaWhatsapp className="text-[var(--text-muted)] hover:text-[var(--brand)] duration-300" />
+        </a>
+        
+                      <a
+          href="https://facebook.com/victoryben"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook">
+          <FaFacebook className="text-[var(--text-muted)] hover:text-[var(--brand)] duration-300" />
         </a>
 
 
