@@ -159,7 +159,7 @@ export default function Footer() {
         </a>
         
                       <a
-          href="https://facebook.com/victoryben"
+          href="https://web.facebook.com/people/Victory-Ben-official/61559050040768/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook">
