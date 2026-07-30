@@ -14,7 +14,7 @@ import Contact from "./pages/Contact";
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-[#0A0A0A] text-white flex flex-col">
+      <div className="min-h-screen bg-[var(--bg)] text-[var(--text)] flex flex-col">
         <Navbar />
 
         <main className="pt-20 flex-1">
@@ -34,5 +34,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
