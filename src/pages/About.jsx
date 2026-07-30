@@ -18,9 +18,9 @@ export default function About() {
           </p>
 
           <h1 className="text-5xl font-black mt-4 leading-tight text-[var(--text)]">
-            Full-Stack Developer Building
+            Full-Stack Developer 
             <span className="text-[var(--brand)]">
-            Digital Solutions in Healthcare and Beyond
+             <br/>Building Digital Solutions in Healthcare and Beyond
             </span>
           </h1>
         </motion.div>
