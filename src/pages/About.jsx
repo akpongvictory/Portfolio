@@ -92,7 +92,7 @@ export default function About() {
             {[
              {
               title: "My Expertise",
-              text: "React • JavaScript • Tailwind CSS • Node.js • Supabase • PostgreSQL • REST APIs • Git",
+              text: "React • JavaScript • TypeScript • Tailwind CSS • Node.js • Supabase • PostgreSQL • REST APIs • Git",
               },
               {
                 title: "Healthcare Background",
